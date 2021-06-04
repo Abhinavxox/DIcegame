@@ -25,60 +25,52 @@ let activeRound = 1;
 let noOfWins = [0, 0];
 let winnerIsNotDecided = true;
 changeRoundColor();
-
-
-
-
 document.querySelector(".rollDice").addEventListener("click", function () {
   if (winnerIsNotDecided) {
     secretNumber = Math.trunc(Math.random() * 5) + 1;
-    
+    // //dice roll effect
     var timesRun = 0;
-    var interval = setInterval(function(){
-    timesRun += 1;
-    if(timesRun === 20){
+    var interval = setInterval(function () {
+      timesRun += 1;
+      if (timesRun === 20) {
+        //if 1 comes then switch player
+        if (secretNumber === 1) {
+          switchScore();
+          if (activePlayer) {
+            Scorep0.textContent = secretNumber;
+          } else {
+            Scorep1.textContent = secretNumber;
+          }
+          total[activePlayer] = 0;
+          activePlayer
+            ? (Totalp0.textContent = total[activePlayer])
+            : (Totalp1.textContent = total[activePlayer]);
+        }
+        //if other num comes
+        else {
+          //player1 turn
+          if (!activePlayer) {
+            Scorep0.textContent = secretNumber;
+            total[activePlayer] += secretNumber;
+            Totalp0.textContent = total[activePlayer];
+            winner();
+          }
+          //player2 turn
+          else if (activePlayer) {
+            Scorep1.textContent = secretNumber;
+            total[activePlayer] += secretNumber;
+            Totalp1.textContent = total[activePlayer];
+            winner();
+          }
+        }
+        roll.play();
         displayDice.src = `dice-${secretNumber}.png`;
-        clearInterval(interval)
-        return
-
-    }
-    let randomNumber = Math.trunc(Math.random() * 5) + 1
-    console.log(randomNumber, "rn")
-    displayDice.src = `dice-${randomNumber}.png`;
-    }, 50); 
-    
-    roll.play();
-    
-    //if 1 comes then switch player
-    if (secretNumber === 1) {
-      switchScore();
-      if (activePlayer) {
-        Scorep0.textContent = secretNumber;
-      } else {
-        Scorep1.textContent = secretNumber;
+        clearInterval(interval);
+        return;
       }
-      total[activePlayer] = 0;
-      activePlayer
-        ? (Totalp0.textContent = total[activePlayer])
-        : (Totalp1.textContent = total[activePlayer]);
-    }
-    //if other num comes
-    else {
-      //player1 turn
-      if (!activePlayer) {
-        Scorep0.textContent = secretNumber;
-        total[activePlayer] += secretNumber;
-        Totalp0.textContent = total[activePlayer];
-        winner();
-      }
-      //player2 turn
-      else if (activePlayer) {
-        Scorep1.textContent = secretNumber;
-        total[activePlayer] += secretNumber;
-        Totalp1.textContent = total[activePlayer];
-        winner();
-      }
-    }
+      let randomNumber = Math.trunc(Math.random() * 5) + 1;
+      displayDice.src = `dice-${randomNumber}.png`;
+    }, 50);
   }
 });
 
