@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="a.css" />
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <div class="header-wrapper">
+      <button class="show-modal">Round 1</button>
+      <button class="show-modal">Round 2</button>
+      <button class="show-modal">Round 3</button>
+      <button class="show-modal-description">i</button>
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1 class="modal-text"></h1>
+        <h1 class="modal-text2"></h1>
+        <hr class="line hidden" />
+        <button class="play-again hidden">Play Again</button>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="player0 active">
+        <h2 class="name">Player 1</h2>
+        <p class="diceRolled p0">0</p>
+        <div class="playerScore">
+          <div class="label">Score</div>
+          <p class="score p0-score">0</p>
+        </div>
+      </div>
+
+      <div class="player1">
+        <h2 class="name">Player 2</h2>
+        <p class="diceRolled p1">0</p>
+        <div class="playerScore">
+          <div class="label">Score</div>
+          <p class="score p1-score">0</p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <img src="dice-4.png" alt="Playing dice" class="dice" />
+        <button class="btn rollDice">Roll</button>
+        <button class="btn reset">New Game</button>
+        <button class="btn hold">Hold</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

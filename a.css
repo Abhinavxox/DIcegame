@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #444;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "Press Start 2P", sans-serif;
+  color: white;
+  line-height: 3rem;
+}
+
+.main-wrapper {
+  background-color: lightgray;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  height: 80vh;
+  width: 75%;
+  margin-top: 8rem;
+}
+
+.player0 {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  height: 80vh;
+  width: 50%;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player1 {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 80vh;
+  width: 50.1%;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active {
+  background-color: gray;
+}
+
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.diceRolled {
+  font-size: 8rem;
+  font-weight: 200;
+  margin-bottom: auto;
+  margin-top: 100px;
+}
+
+.playerScore {
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 9px;
+  width: 30%;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.score {
+  font-size: 3.5rem;
+}
+.label {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* bich walako paalo */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.reset {
+  top: 4rem;
+}
+.rollDice {
+  top: 39.3rem;
+}
+.hold {
+  top: 46.1rem;
+}
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.header-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+/* for rounds */
+
+.header-wrapper {
+  margin-top: -30px;
+}
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.show-modal-description {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+}
+
+.play-again {
+  font-size: 2rem;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  color: #444 !important;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.activeRound {
+  color: rgb(235, 77, 77);
+}
