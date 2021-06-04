@@ -25,21 +25,30 @@ let activeRound = 1;
 let noOfWins = [0, 0];
 let winnerIsNotDecided = true;
 changeRoundColor();
+
+
+
+
 document.querySelector(".rollDice").addEventListener("click", function () {
   if (winnerIsNotDecided) {
-    secretNumber = Math.trunc(Math.random() * 6) + 1;
-    // //dice roll effect
-    // let i = 0;
-    // while (i < 6) {
-    //   const b = setInterval(function () {
-    //     let a = Math.trunc(Math.random() * 6) + 1;
-    //     displayDice.src = `dice-${a}.png`;
-    //     i++;
-    //   }, 30);
-    // }
-    // clearInterval(b);
+    secretNumber = Math.trunc(Math.random() * 5) + 1;
+    
+    var timesRun = 0;
+    var interval = setInterval(function(){
+    timesRun += 1;
+    if(timesRun === 20){
+        displayDice.src = `dice-${secretNumber}.png`;
+        clearInterval(interval)
+        return
+
+    }
+    let randomNumber = Math.trunc(Math.random() * 5) + 1
+    console.log(randomNumber, "rn")
+    displayDice.src = `dice-${randomNumber}.png`;
+    }, 50); 
+    
     roll.play();
-    displayDice.src = `dice-${secretNumber}.png`;
+    
     //if 1 comes then switch player
     if (secretNumber === 1) {
       switchScore();
